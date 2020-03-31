@@ -1,0 +1,16 @@
+cd C:\Users\雷\OneDrive\xidian\2020 spring\分布式计算\第三次作业\RPC示例代码\rmi4\book-local\server
+javac *.java
+start /b rmiregistry 1099
+java bookserver
+
+#Windows后台运行方法：
+start /b rmiregistry 1099
+tasklist
+taskkill /pid **** /F
+
+cd C:\Users\雷\OneDrive\xidian\2020 spring\分布式计算\第三次作业\RPC示例代码\rmi4\book-local\local
+javac *.java
+java bookclient
+
+
+

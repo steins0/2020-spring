@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "C:\\Users\\雷\\OneDrive\\xidian\\2020 spring\\分布式计算\\第三次作业\\RPC示例代码\\RMI"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.classpath": true,
+			"**/.project": true,
+			"**/.settings": true,
+			"**/.factorypath": true
+		}
+	}
+}
