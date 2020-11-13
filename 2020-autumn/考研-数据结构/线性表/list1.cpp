@@ -62,6 +62,7 @@ void insertlist(sqllist &L,int i,int e)
 //插入--动态
 void insertlist(seqllist &L,int i,int e)
 {
+    if(L.now_lenth == L.max_lenth)return;
     for(int i = L.now_lenth;i >= e;i--)
     {
         L.data[i] = L.data[i-1];
@@ -127,6 +128,13 @@ int findbylocat(seqllist &L,int e)
     return L.data[e];
 }
 
-
-
+//返回长度
+int listlenth(sqllist &L)
+{
+    return L.lenth;
+}
+int listlenth(seqllist &L)
+{
+    return L.now_lenth;
+}
 
