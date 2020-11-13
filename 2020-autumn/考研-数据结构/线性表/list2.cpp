@@ -18,7 +18,7 @@ typedef struct Lnode *Lnolist; //定义结构体的指针类型
 // }Lnode，*Lnolist;
 
 //初始化
-//带头节点
+//带头节点(即第一个节点无数据)
 void Initlist(Lnolist &L)
 {
     L = (Lnode *)malloc(sizeof(Lnode));
@@ -83,7 +83,7 @@ bool insertlist(Lnolist &L, int i, int e)
 {
     Lnolist p, s;
     int j = 1;
-    for(p = L;j<i;j++)
+    for (p = L; j <= i; j++)
     {
         if (p->next == NULL)
         {
@@ -91,7 +91,7 @@ bool insertlist(Lnolist &L, int i, int e)
         }
         p = p->next;
     }
-    if (j != i )
+    if (j != i)
         return false; // i的位置不合理
     if ((s = (Lnode *)malloc(sizeof(Lnode))) == NULL)
         exit(1); // 存储分配失败
@@ -101,3 +101,23 @@ bool insertlist(Lnolist &L, int i, int e)
     return true;
 }
 
+//插入数据  i为位置
+bool deletelist(Lnolist &L, int i)
+{
+    Lnolist p,q;
+    int j = 0;
+    for (p = L; j < i - 1; j++)
+    {
+        if (p->next == NULL)
+        {
+            break;
+        }
+        p = p->next;
+    }
+    if (j != i - 2)
+        return false; // i的位置不合理
+    q = p->next;
+    p->next = q->next;
+    free(q);
+    return true;
+}
