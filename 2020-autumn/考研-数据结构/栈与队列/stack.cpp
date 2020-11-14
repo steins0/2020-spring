@@ -48,7 +48,7 @@ void dropstack(nodestacks &s)
 
 //入栈 s:栈  i：数值
 //顺序结构
-bool pop(sqstack &s, int i)
+bool push(sqstack &s, int i)
 {
     if (s.top == max_int_size - 1)
         return false;
@@ -57,7 +57,7 @@ bool pop(sqstack &s, int i)
     return true;
 }
 //链式结构  == 链表头插法  
-bool pop(nodestacks &s,int i)
+bool push(nodestacks &s,int i)
 {
     nodestacks p,q;
     p = s->next;
@@ -71,14 +71,14 @@ bool pop(nodestacks &s,int i)
 
 //出栈 s:栈
 //顺序结构
-int push(sqstack &s){
+int pop(sqstack &s){
     if(s.top == -1)
     return false;
     s.top--;
     return s.data[++s.top];
 }
 //链式结构  
-int push(nodestacks &s)
+int pop(nodestacks &s)
 {
     nodestacks p = s->next;
     int ans = p->data;
