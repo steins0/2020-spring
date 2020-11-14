@@ -39,9 +39,9 @@ void dropstack(nodestacks &s)
     p = s;
     while (p)
     {
-        p = p->next;
         p1 = p;
-        free(p);
+        p = p->next;
+        free(p1);
     }
     s = NULL;
 }
